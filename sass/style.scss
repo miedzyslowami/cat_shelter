@@ -1,0 +1,77 @@
+@font-face {
+  font-family: 'catFont';
+  src: url('../fonts/catFont.woff2') format('woff2'),
+  url('../fonts/catFont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+// Colors
+$rainbow: (
+red: #FF0000,
+yellow: #FFFF00,
+green: #00FF00,
+blue: #0000FF,
+turquoise:#40e0d0
+);
+
+
+body{
+  font-family:'Montserrat';
+
+  background: rgba(119, 136, 153, 0.57);
+}
+
+@each $name, $color in $rainbow {
+  .#{$name}{
+    border: 4px solid $color;
+  }
+}
+
+.catInfo{
+  box-shadow: inset 0px 0px 17px 8px rgb(177, 187, 197);
+  text-align: center;
+  width:50vw;
+  margin:auto;
+  background: white;
+  .catTable{
+    display:block;
+    font-size: 1.7rem;
+    width: 70%;
+    display: inline-table;
+    padding-bottom: 3rem;
+    .catCategory{
+      border-top: 3px solid #b1bbc5;
+      border-bottom: 3px solid #4777a7;
+    }
+    .catFont{
+      font-family:'catFont';
+      font-size: 3rem;
+    }
+  }
+
+  .searchBar{
+    display:block;
+    padding: 2rem;
+    p:first-of-type{
+      font-size: 1.7rem;
+    }
+    p:nth-of-type(2){
+      display:inline-block;
+    }
+    .searchBar_input{
+      background-color: rgba(177, 187, 197, 0.65);
+      border-color: white;
+      padding: 8px;
+      &:first-of-type{
+        width: 50%;
+        display: block;
+        margin: auto;
+      }
+
+
+    }
+
+  }
+}
